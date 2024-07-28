@@ -5,7 +5,6 @@ output_file = 'output.txt'
 with open('output.txt', 'w') as dest:
     pass
 
-
 def copy(input_file, output_file):
     try:
         with open(input_file, 'r') as input:

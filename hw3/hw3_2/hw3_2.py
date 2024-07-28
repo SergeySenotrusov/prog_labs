@@ -4,17 +4,27 @@ def get_data(file_path):
             data = {}
             current_store = None
             for line in file:
+                # print(f"'{line}'")
                 line = line.strip()
+                # print(f"'{line}'")
+                
                 if line.startswith('{') or line.startswith('}'):
                     continue
                 elif line.startswith('"') and line.endswith(': {'):
                     current_store = line.split('"')[1]
+                    # print(line.split('"')[0])
+                    # print(line.split('"')[1])
                     data[current_store] = {}
+                    print(1)
+                    print(data)
                 elif ':' in line:
                     product, sales = line.split(':')
                     product = product.strip().strip('"')
                     sales = int(sales.strip().strip(','))
                     data[current_store][product] = sales
+                    print(2)
+                    print(data)
+                    # print(type(data))
         return data
     except FileNotFoundError:
         print(f"File {file_path} not found")

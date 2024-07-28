@@ -17,7 +17,12 @@ def get_data(file_path):
         return None
 
 def search(data, course_name):
-    students_in_course = [student for student, courses in data.items() if course_name in courses]
+    # students_in_course = [student for student, courses in data.items() if course_name in courses]
+    students_in_course = []
+    for student, courses in data.items():
+        if course_name in courses:
+            students_in_course.append(student)
+
     return students_in_course
 
 

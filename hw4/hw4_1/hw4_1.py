@@ -5,7 +5,8 @@ def balance(expression):
     for char in expression:
         if char in '([{<': seqq.append(char)
         elif char in ')]}>':
-            if not seqq or seqq.pop() != brackets[char]: return False
+            if not seqq or not seqq.pop() == brackets[char]:  return False
+            
     return not seqq
 
 def read_file(file_path):

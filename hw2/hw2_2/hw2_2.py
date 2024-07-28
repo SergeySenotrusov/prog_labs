@@ -13,7 +13,7 @@ try:
     for line in lines:
         line = line.rstrip()
         line = remove_symbols(line, symb_rmv) + ';'
-        symb_rmv.append(line[::-1])
+        processed_lines.append(line[::-1])
 
     with open('output.txt', 'w') as file:
         for line in processed_lines:
